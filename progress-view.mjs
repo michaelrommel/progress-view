@@ -153,7 +153,7 @@ function ProgressView () {
       const barMax = that._screen.columns - that._progressHeader.length - trailer.length - 4;
       // fragment shall be 10% of overall length
       const barFragment = Math.round(0.1 * barMax);
-      const barFront = Math.round(-1 * (that._progressValue + 1) * barMax / 100);
+      let barFront = Math.round(-1 * (that._progressValue + 1) * barMax / 100);
       if (barFront + barFragment > barMax) barFront = barMax - barFragment;
       const barBack = Math.round(barMax - barFragment - barFront);
       // display the bar
